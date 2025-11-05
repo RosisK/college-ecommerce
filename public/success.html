@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Payment Success — Charkose Jhadi</title>
+    <style>
+        body {
+            font-family: Arial;
+            padding: 28px;
+            background: #f7f7f8
+        }
+
+        .card {
+            background: #fff;
+            padding: 18px;
+            border-radius: 8px;
+            max-width: 900px;
+            margin: auto
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <h2>Payment Success — Charkose Jhadi</h2>
+        <p>Thank you — the gateway returned success. Below are details (for demo only).</p>
+        <h3>Payment details returned</h3>
+        <pre id="params">Loading...</pre>
+        <h3>Local order (this browser)</h3>
+        <pre id="local">Loading...</pre>
+        <p><a href="/">Back to store</a></p>
+    </div>
+
+    <script>
+        function getQS() { const u = new URL(location.href); const obj = {}; for (const [k, v] of u.searchParams) obj[k] = v; return obj; }
+        const params = getQS();
+        document.getElementById('params').textContent = JSON.stringify(params, null, 2);
+        const order = localStorage.getItem('cj_latest_order');
+        document.getElementById('local').textContent = order ? JSON.stringify(JSON.parse(order), null, 2) : 'No local order found';
+    </script>
+</body>
+
+</html>

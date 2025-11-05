@@ -1,0 +1,130 @@
+:root {
+    --accent: #1f7a5f;
+    --muted: #666;
+    --bg: #f7f7f8;
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: Inter, system-ui, Segoe UI, Arial, sans-serif;
+    margin: 0;
+    background: var(--bg);
+    color: #111;
+}
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 18px 24px;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    color: var(--accent);
+}
+.site-header h1 {
+    margin: 0;
+    font-size: 20px;
+}
+.slogan {
+    margin: 0;
+    color: var(--muted);
+    font-size: 13px;
+}
+.cart-btn {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.container {
+    display: flex;
+    gap: 20px;
+    padding: 28px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 18px;
+    flex: 1;
+}
+.product-card {
+    background: #fff;
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+}
+.product-img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 6px;
+    background: #eee;
+}
+.product-name {
+    margin: 0;
+    font-size: 15px;
+    text-align: center;
+}
+.product-price {
+    font-weight: 700;
+}
+.add-btn {
+    background: transparent;
+    border: 1px solid var(--accent);
+    padding: 8px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.cart-panel {
+    width: 320px;
+    background: #fff;
+    padding: 16px;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+.hidden {
+    display: none;
+}
+.cart-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    margin-top: 12px;
+}
+.primary {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+#cart-list {
+    list-style: none;
+    padding: 0;
+    margin: 8px 0;
+    max-height: 320px;
+    overflow: auto;
+}
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 8px 0;
+    border-bottom: 1px dashed #eee;
+}
+.qty-input {
+    width: 56px;
+}
+.small-muted {
+    font-size: 13px;
+    color: var(--muted);
+}
